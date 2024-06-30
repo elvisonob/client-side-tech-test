@@ -1,8 +1,14 @@
 .login {
   width: 360px;
-  height: 280px;
+  height: 400px;
   margin: auto;
   border-radius: 3px;
   background-color: white;
   margin-top: 20px;
+}
+
+.validationControl p {
+  color: red;
+  margin-top: -10px;
+  font-size: small;
 }

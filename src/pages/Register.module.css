@@ -4,7 +4,7 @@ body {
 
 .signUp {
   width: 360px;
-  height: 620px;
+  height: 560px;
   margin: auto;
   background-color: white;
   border-radius: 3px;
@@ -48,4 +48,16 @@ button {
   background-color: blue;
   color: white;
   font-size: 18px;
+}
+
+.validationControl {
+  color: red;
+  margin-top: -10px;
+  font-size: small;
+}
+
+.validationControl2 {
+  color: green;
+  margin-top: 12px;
+  font-size: small;
 }
