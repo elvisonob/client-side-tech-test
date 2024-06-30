@@ -12,3 +12,7 @@
   margin-top: -10px;
   font-size: small;
 }
+
+button {
+  cursor: pointer;
+}

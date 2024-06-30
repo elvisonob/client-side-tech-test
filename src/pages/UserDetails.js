@@ -27,9 +27,7 @@ const UserDetails = () => {
       <MainNavigation2 />
       <div className={classes.heading}>User Details</div>
       <div className={classes.text}>
-        Congratulations, you have been logged in and you have made it to the
-        list and page of Dedicated IT Enthusiast and you can see your name and
-        email and also see other members
+        Current List of Dedicated IT Enthusiast
       </div>
       {userData ? (
         userData.users.map((user) => (
