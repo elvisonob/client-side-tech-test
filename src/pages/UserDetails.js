@@ -37,7 +37,7 @@ const UserDetails = () => {
           </div>
         ))
       ) : (
-        <p>Loading user data...</p>
+        <p>Loading user data..</p>
       )}
     </div>
   );
