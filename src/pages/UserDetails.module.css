@@ -1,0 +1,25 @@
+.userDetails {
+  width: 500px;
+  /* height: 560px; */
+  margin: auto;
+  background-color: white;
+  border-radius: 3px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.text {
+  text-align: center;
+  font-size: large;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.heading {
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+  font-size: xx-large;
+  font-weight: bolder;
+}

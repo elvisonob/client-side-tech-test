@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import classes from './Register.module.css';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 const Register = () => {
   const [enteredName, setEnteredName] = useState('');
@@ -10,26 +10,8 @@ const Register = () => {
   const [error, setError] = useState(false);
   const [serverUpdate, setServerUpdate] = useState(null);
 
-  const onEnteredName = (e) => {
-    setEnteredName(e.target.value);
-  };
-
-  const onEnteredEmail = (e) => {
-    setEnteredEmail(e.target.value);
-  };
-
-  const onEnteredPassword = (e) => {
-    setEnteredPassword(e.target.value);
-  };
-
-  const onEnteredConfirmPassword = (e) => {
-    setEnteredConfirmedPassword(e.target.value);
-  };
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
-
-    //validate for name, email
 
     const emailIsValid =
       enteredEmail.includes('@') && enteredEmail.includes('.');
@@ -47,7 +29,6 @@ const Register = () => {
     ) {
       return setError(true);
     }
-    console.log(enteredName, enteredEmail, enteredPassword);
 
     setEnteredName('');
     setEnteredEmail('');
@@ -71,10 +52,9 @@ const Register = () => {
         throw new Error(errorData.message || 'Failed to register');
       }
 
-      // Handle successful registration (e.g., redirect to another page)
       setServerUpdate('Registration Successful, proceed to login now');
     } catch (error) {
-      setServerUpdate(error.message); // Set server error message
+      setServerUpdate(error.message);
     }
   };
 
@@ -87,7 +67,7 @@ const Register = () => {
           id="text"
           name="text"
           type="text"
-          onChange={onEnteredName}
+          onChange={(e) => setEnteredName(e.target.value)}
           value={enteredName}
         />
         <label>Email</label>
@@ -95,7 +75,7 @@ const Register = () => {
           id="email"
           type="email"
           name="email"
-          onChange={onEnteredEmail}
+          onChange={(e) => setEnteredEmail(e.target.value)}
           value={enteredEmail}
         />
         <label>Password</label>
@@ -103,7 +83,7 @@ const Register = () => {
           id="password"
           name="password"
           type="password"
-          onChange={onEnteredPassword}
+          onChange={(e) => setEnteredPassword(e.target.value)}
           value={enteredPassword}
         />
         <label>Confirm Password</label>
@@ -111,7 +91,7 @@ const Register = () => {
           id="confirmPassword"
           name="confirmPassword"
           type="password"
-          onChange={onEnteredConfirmPassword}
+          onChange={(e) => setEnteredConfirmedPassword(e.target.value)}
           value={enteredConfirmPassword}
         />
         <div className={classes.validationControl}>

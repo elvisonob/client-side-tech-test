@@ -2,12 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import classes from './Login.module.css';
 
-// import { useNavigate } from 'react-router-dom';
-
 const Login = () => {
   const [emailIsInvalid, setEmailIsInvalid] = useState(false);
   const [passwordIsInvalid, setPasswordIsInvalid] = useState(false);
-  const [serverError, setServerError] = useState(null);
+  const [serverInfo, setServerInfo] = useState(null);
+
   const email = useRef();
   const password = useRef();
   const navigate = useNavigate();
@@ -33,9 +32,6 @@ const Login = () => {
     }
 
     setPasswordIsInvalid(false);
-    console.log(enteredEmail, enteredPassword);
-    // email.current.value = '';
-    // password.current.value = '';
 
     try {
       const response = await fetch('http://localhost:8080/user/login', {
@@ -52,11 +48,9 @@ const Login = () => {
         throw new Error(errorData.message || 'Failed to login');
       }
 
-      // Handle successful login (e.g., redirect to dashboard)
-      console.log('Login successful');
-      navigate('/UserDetails'); // Redirect to dashboard page
+      navigate('/userDetails');
     } catch (error) {
-      setServerError(error.message); // Set server error message
+      setServerInfo(error.message);
     }
   };
 
@@ -78,7 +72,7 @@ const Login = () => {
           )}
         </div>
         <div className={classes.validationControl}>
-          <p>{serverError}</p>
+          <p>{serverInfo}</p>
         </div>
         <button>Submit</button>
       </form>
