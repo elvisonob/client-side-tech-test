@@ -1,8 +1,8 @@
 <h1>Project Title</h1>
-Client-side: Register and Login Implementation
+Client-side: Registration and Login Implementation
 
 <h1>Project Description</h1>
-This Application registers and login users, and the user's details is stored securely in a Database.
+This Application registers and login users, and the user's details are stored securely in a Database.
 <br>
 Users can view the list of registered members, assuring them that they can verify the veracity of their own registration details.
 <br>
