@@ -27,7 +27,7 @@ const UserDetails = () => {
       <MainNavigation2 />
       <div className={classes.heading}>User Details</div>
       <div className={classes.text}>
-        Current List of Dedicated IT Enthusiast
+        Current List of registered Dedicated IT Enthusiast
       </div>
       {userData ? (
         userData.users.map((user) => (
